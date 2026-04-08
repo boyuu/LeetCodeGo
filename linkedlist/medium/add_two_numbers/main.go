@@ -1,35 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"github.com/boyuu/LeetCodeGo/linkedlist/utils"
+)
 
 func main() {
-	l1 := makeLinkedList(9, 9, 9, 9)
-	l2 := makeLinkedList(9, 9, 9, 9, 9, 9)
-	printLinkedList(addTwoNumbers(l1, l2))
+	l1 := utils.MakeLinkedList(9, 9, 9, 9)
+	l2 := utils.MakeLinkedList(9, 9, 9, 9, 9, 9)
+	utils.PrintLinkedList(addTwoNumbers(l1, l2))
 }
 
-func makeLinkedList(nums ...int) *ListNode {
-	dummy := &ListNode{}
-	p := dummy
-	for _, n := range nums {
-		p.Next = &ListNode{Val: n}
-		p = p.Next
-	}
-	return dummy.Next
-}
-
-func printLinkedList(root *ListNode) {
-	for root != nil {
-		fmt.Print(root.Val, " ")
-		root = root.Next
-	}
-	fmt.Println("")
-}
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+type ListNode = utils.ListNode
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	dummy := &ListNode{}
