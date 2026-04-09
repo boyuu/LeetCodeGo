@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	root := utils.MakeTreeNode(utils.PtrInt(1), nil, utils.PtrInt(2), utils.PtrInt(3))
+	root := utils.MakeTreeNode(1, nil, 2, 3)
 	nums0 := inorderTraversal(root)
 	nums1 := inorderRecursive(root)
 	fmt.Println(nums0)
