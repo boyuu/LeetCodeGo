@@ -8,6 +8,7 @@ func main() {
 	fmt.Println(findPeakElement([]int{1, 2, 3, 1}))
 }
 
+// 二分查找，mid和mid+1比
 func findPeakElement(nums []int) int {
 	i, j := 0, len(nums)-1
 	for i < j {
